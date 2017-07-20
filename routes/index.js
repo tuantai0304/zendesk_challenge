@@ -20,8 +20,19 @@ router.get('/:page?', function(req, res, next) {
       res.sendStatus(returnObject.statusCode);
     }
   });
+});
 
-
+router.get('/detail/:id', function(req, res, next) {
+  config.helper.getTicketsDetail(req.params.id, function (returnObject) {
+    console.log(returnObject);
+    if (returnObject.statusCode == 200) {
+      res.render('detail', {
+        ticket: returnObject.ticket
+      });
+    } else {
+      res.sendStatus(returnObject.statusCode);
+    }
+  });
 });
 
 module.exports = router;

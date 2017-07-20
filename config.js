@@ -6,8 +6,6 @@ var https = require('https');
 
 var config = {
     host: 'webmobit.zendesk.com',
-    // username: 'tuantai0304@gmail.com',
-    // password: 'Kingheomap@123',
     method: 'GET',
     auth: 'tuantai0304@gmail.com' + ':' + 'Kingheomap@123',
     headers: {
