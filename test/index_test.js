@@ -8,13 +8,13 @@ var assert = chai.assert;
 
 var server = require('../app');
 
-var config = require('../config');
+var helper = require('../helper');
 
 chai.use(chaiHttp);
 
 describe('Helper method', () => {
    it("Get all tickets", function (done) {
-       config.helper.getTickets(2, function (returnObject) {
+       helper.getTickets(2, function (returnObject) {
           returnObject.should.have.property('tickets');
            assert.equal(returnObject.statusCode, 200);
            done();
@@ -22,7 +22,7 @@ describe('Helper method', () => {
    });
 
     it("Get Ticket detail", function (done) {
-        config.helper.getTicketsDetail(2, function (returnObject) {
+        helper.getTicketsDetail(2, function (returnObject) {
             returnObject.should.have.property('ticket');
             assert.equal(returnObject.statusCode, 200);
             done();
@@ -30,7 +30,7 @@ describe('Helper method', () => {
     });
 
     it("A ticket ID not found", function (done) {
-        config.helper.getTicketsDetail(2000, function (returnObject) {
+        helper.getTicketsDetail(2000, function (returnObject) {
             assert.equal(returnObject.statusCode, 404);
             done();
         });
