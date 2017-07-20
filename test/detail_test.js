@@ -8,12 +8,11 @@ let server = require('../app');
 chai.use(chaiHttp);
 
 describe('/GET', () => {
-    it('View first 25 tickets', (done) => {
+    it('Ticket ID found', (done) => {
         chai.request(server)
-            .get('/')
+            .get('/detail/5')
             .end((err, res) => {
                res.should.have.status(200);
-                if (err) throw err;
                 done();
             });
     })

@@ -1,16 +1,16 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-
   //p #{tickets}
-
   ul
     each ticket, index in tickets
-      li= ticket.url
+      li
+        p
+          a(href="/detail/" + ticket.id)
+            h3 #{ticket.id}. #{ticket.subject}
 
   // Navigation
+  h4 Other pages
   ul
     - for (var i=1; i<= number_pages; i++)
         li

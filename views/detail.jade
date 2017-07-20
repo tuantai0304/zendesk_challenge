@@ -5,4 +5,24 @@ block content
 
   table
     tr
-      td #{ticket.url}
+      td
+        h3 'ID'
+      td #{ticket.id}
+    tr
+      td
+        h3 'subject'
+      td #{ticket.subject}
+    tr
+      td
+        h3 'description'
+      td #{ticket.description}
+    tr
+      td
+        h3 'priority'
+      td #{ticket.priority}
+    tr
+      td
+        h3 'status'
+      td #{ticket.status}
+
+  a(href="/") View all tickets
