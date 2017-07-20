@@ -7,7 +7,7 @@ var https = require('https');
 var config = {
     host: 'webmobit.zendesk.com',
     method: 'GET',
-    auth: 'tuantai0304@gmail.cm' + ':' + 'Kingheomap@123',
+    auth: 'tuantai0304@gmail.com' + ':' + 'Kingheomap@123',
     headers: {
         'Content-Type': 'application/json'
     },
